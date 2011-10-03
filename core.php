@@ -2,10 +2,10 @@
 /*
 Plugin Name: Concurso Cultural
 Plugin URI: 
-Description: Sistema para criação de concursos culturais
+Description: Plugin para criação de concursos culturais
 Author: Marcelo Ferracioli
 Version: 0.1.0
-Author URI: http://www.twitter.com/mferracioli
+Author URI: https://github.com/mferracioli/
 */
 
 include(dirname(__FILE__) . "/install.php");

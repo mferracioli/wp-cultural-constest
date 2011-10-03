@@ -2,13 +2,11 @@
 
 class CulturalContest_Install {
 	
-	// Install
 	function install() {
 		$this->createContestsTable();
 		$this->createUsersTable();
 	}
 	
-	// Install: create table
 	function createTable($tableName, $sql) {
 		global $wpdb;
 		$tableName = $wpdb->prefix . $tableName;
@@ -19,7 +17,6 @@ class CulturalContest_Install {
 		}
 	}
 	
-	// Install: create contests table
 	function createContestsTable() {
 		$sql = " (
 			id BIGINT NOT NULL AUTO_INCREMENT,
@@ -31,7 +28,6 @@ class CulturalContest_Install {
 		$this->createTable("contests", $sql);
 	}
 	
-	// Install: create users table
 	function createUsersTable() {
 		$sql = " (
 			id BIGINT NOT NULL AUTO_INCREMENT,

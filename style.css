@@ -1,0 +1,43 @@
+#cultural-contest-description {
+	
+}
+
+#cultural-contest-form-wrap {
+	
+}
+
+.cultural-contest-form-field {
+	
+}
+
+.cultural-contest-form-field .textfield {
+	width:300px;
+	border:1px solid #666;
+	font-family:'arial';
+	font-size:14px;
+	padding:4px;
+}
+
+.address2.cultural-contest-form-field .textfield {
+	width:80px;
+}
+
+.zipcode.cultural-contest-form-field .textfield {
+	width:120px;
+}
+
+.document.cultural-contest-form-field .textfield {
+	width:160px;
+}
+
+.answer.cultural-contest-form-field .textfield {
+	width:300px;
+	height:100px;
+}
+
+.submit.cultural-contest-form-field input {
+	border:1px solid #333;
+	background:#666;
+	color:#fff;
+	padding:6px 10px;
+}

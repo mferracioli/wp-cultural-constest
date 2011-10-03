@@ -46,7 +46,7 @@
 				<tr class="alternate iedit">
 					<th class="check-column" scope="row">&nbsp;</th>
 					<td class="post-title page-title column-title">
-						<strong><a title="Editar" href="?page=cultural-contest&action=edit&id=<?php echo $item->id; ?>" class="row-title"><?php echo $item->name; ?></a></strong>
+						<strong><a title="Visualizar Cadastros" href="?page=cultural-contest&action=users&id=<?php echo $item->id; ?>" class="row-title"><?php echo $item->name; ?></a></strong>
 						<div class="row-actions">
 							<span class="edit"><a title="Editar essa página" href="?page=cultural-contest&action=edit&id=<?php echo $item->id; ?>">Editar</a> | </span>
 							<span class="trash"><a href="?page=cultural-contest&action=delete&id=<?php echo $item->id; ?>" title="Excluir" class="submitdelete" onclick="if(!confirm('Deseja excluir este concurso e seus usuários?')) return false;">Excluir</a></span>

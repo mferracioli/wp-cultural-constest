@@ -50,5 +50,11 @@ class ContestContests_Controller_Contest {
 		require(dirname(__FILE__) . "/../views/contest/index.php");
 	}
 	
+	function showAction($id) {
+		$contestModel = new ContestContests_Model_Contest();
+		$contest = $contestModel->find($id);
+		require(dirname(__FILE__) . "/../views/contest/_show.php");
+	}
+	
 }
 ?>

@@ -1,26 +1,8 @@
 <?php
-/*
-Plugin Name: Concurso Cultural
-Plugin URI: 
-Description: Plugin para criação de concursos culturais
-Author: Marcelo Ferracioli
-Version: 0.1.0
-Author URI: https://github.com/mferracioli/
-*/
-
-include(dirname(__FILE__) . "/install.php");
-include(dirname(__FILE__) . "/models/contest.php");
-include(dirname(__FILE__) . "/models/user.php");
-include(dirname(__FILE__) . "/controllers/contest.php");
-include(dirname(__FILE__) . "/controllers/user.php");
-
-
 function culturalContestInstall() {
 	$culturalContestInstall = new CulturalContest_Install();
 	$culturalContestInstall->install();
 }
-
-register_activation_hook(__FILE__, "culturalContestInstall");
 
 function culturalContestMenu() {
 	add_menu_page("Concursos", "Concursos", "manage_options", "cultural-contest", "culturalContestContests");
@@ -57,21 +39,28 @@ function culturalContestUsers() {
 	}
 }
 
-add_action("admin_menu", "culturalContestMenu");
-
 function culturalContestEnableEditor() {
-	wp_enqueue_script( 'common' );
-	wp_enqueue_script( 'jquery-color' );
-	wp_print_scripts('editor');
-	if (function_exists('add_thickbox')) add_thickbox();
-	wp_print_scripts('media-upload');
-	if (function_exists('wp_tiny_mce')) wp_tiny_mce();
+	wp_enqueue_script( "common" );
+	wp_enqueue_script( "jquery-color" );
+	wp_print_scripts("editor");
+	if (function_exists("add_thickbox")) add_thickbox();
+	wp_print_scripts("media-upload");
+	if (function_exists("wp_tiny_mce")) wp_tiny_mce();
 	wp_admin_css();
-	wp_enqueue_script('utils');
+	wp_enqueue_script("utils");
 	do_action("admin_print_styles-post-php");
-	do_action('admin_print_styles');
+	do_action("admin_print_styles");
 }
 
-add_filter('admin_head','culturalContestEnableEditor');
+function culturalContestForm($atts) {
+	$id = $atts["id"];
+	$contestController = new ContestContests_Controller_Contest();
+	$contestController->showAction($id);
+}
 
+function culturalContestStylesheet() {
+	$path = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "style.css";
+	wp_register_style("cultural_contest_stylesheet", $path);
+	wp_enqueue_style( "cultural_contest_stylesheet");
+}
 ?>

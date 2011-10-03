@@ -4,10 +4,14 @@ function culturalContestInstall() {
 	$culturalContestInstall->install();
 }
 
+register_activation_hook(__FILE__, "culturalContestInstall");
+
 function culturalContestMenu() {
 	add_menu_page("Concursos", "Concursos", "manage_options", "cultural-contest", "culturalContestContests");
 	add_submenu_page("cultural-contest", "Usuários", "Usuários", "manage_options", "cultural-contest-users", "culturalContestUsers");
 }
+
+add_action("admin_menu", "culturalContestMenu");
 
 function culturalContestContests() {
 	$contestController = new ContestContests_Controller_Contest();
@@ -52,17 +56,23 @@ function culturalContestEnableEditor() {
 	do_action("admin_print_styles");
 }
 
+add_filter("admin_head","culturalContestEnableEditor");
+
 function culturalContestForm($atts) {
 	$id = $atts["id"];
 	$contestController = new ContestContests_Controller_Contest();
 	$contestController->showAction($id);
 }
 
+add_shortcode("cultural_contest_form", "culturalContestForm");
+
 function culturalContestStylesheet() {
 	$path = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "stylesheets/style.css";
 	wp_register_style("cultural_contest_stylesheet", $path);
 	wp_enqueue_style( "cultural_contest_stylesheet");
 }
+
+add_filter("wp_print_styles","culturalContestStylesheet");
 
 function culturalContestJavascript() {
 	$path = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "javascripts/jquery.validate.min.js";
@@ -73,4 +83,6 @@ function culturalContestJavascript() {
 	wp_enqueue_script("jquery_validate");
 	wp_enqueue_script("cultural_contest_application");
 }
+
+add_filter("wp_enqueue_scripts","culturalContestJavascript");
 ?>

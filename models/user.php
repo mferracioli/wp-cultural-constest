@@ -1,5 +1,5 @@
 <?php
-class ContestContests_UserModel {
+class ContestContests_Model_User {
 	
 	function findAll() {
 		global $wpdb;

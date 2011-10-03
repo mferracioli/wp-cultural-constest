@@ -1,9 +1,9 @@
 <?php
-class ContestContests_UserController {
+class ContestContests_Controller_User {
 	
 	function showAction() {
-		$userModel = new ContestContests_UserModel();
-		$contestModel = new ContestContests_ContestModel();
+		$userModel = new ContestContests_Model_User();
+		$contestModel = new ContestContests_Model_Contest();
 		$id = $_GET["id"];
 		$user = $userModel->find($id);
 		$contest = $contestModel->find($user->contest_id);
@@ -11,7 +11,7 @@ class ContestContests_UserController {
 	}
 	
 	function indexAction() {
-		$userModel = new ContestContests_UserModel();
+		$userModel = new ContestContests_Model_User();
 		$items = $userModel->findAll();
 		require(dirname(__FILE__) . "/../views/user/index.php");
 	}

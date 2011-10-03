@@ -1,8 +1,8 @@
 <?php
-class ContestContests_ContestController {
+class ContestContests_Controller_Contest {
 	
 	function indexAction() {
-		$contestModel = new ContestContests_ContestModel();
+		$contestModel = new ContestContests_Model_Contest();
 		$items = $contestModel->findAll();
 		require(dirname(__FILE__) . "/../views/contest/index.php");
 	}
@@ -12,7 +12,7 @@ class ContestContests_ContestController {
 	}
 	
 	function createAction() {
-		$contestModel = new ContestContests_ContestModel();
+		$contestModel = new ContestContests_Model_Contest();
 		$contestModel->create($_POST);
 		$item = $contestModel->getLast();
 		$flashMessage = "Concurso criado com sucesso";
@@ -20,13 +20,13 @@ class ContestContests_ContestController {
 	}
 	
 	function editAction() {
-		$contestModel = new ContestContests_ContestModel();
+		$contestModel = new ContestContests_Model_Contest();
 		$item = $contestModel->find($_GET["id"]);
 		require(dirname(__FILE__) . "/../views/contest/edit.php");
 	}
 	
 	function updateAction() {
-		$contestModel = new ContestContests_ContestModel();
+		$contestModel = new ContestContests_Model_Contest();
 		$id = $_GET["id"];
 		$contestModel->update($id, $_POST);
 		$item = $contestModel->find($id);
@@ -35,7 +35,7 @@ class ContestContests_ContestController {
 	}
 	
 	function usersAction() {
-		$contestModel = new ContestContests_ContestModel();
+		$contestModel = new ContestContests_Model_Contest();
 		$id = $_GET["id"];
 		$contest = $contestModel->find($id);
 		$items = $contestModel->getContestUsers($id);
@@ -43,7 +43,7 @@ class ContestContests_ContestController {
 	}
 	
 	function deleteAction() {
-		$contestModel = new ContestContests_ContestModel();
+		$contestModel = new ContestContests_Model_Contest();
 		$id = $_GET["id"];
 		$contest = $contestModel->delete($id);
 		$items = $contestModel->findAll();

@@ -1,5 +1,5 @@
 <?php
-class ContestContests_ContestModel {
+class ContestContests_Model_Contest {
 	
 	function findAll() {
 		global $wpdb;

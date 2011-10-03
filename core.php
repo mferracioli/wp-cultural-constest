@@ -28,7 +28,7 @@ function culturalContestMenu() {
 }
 
 function culturalContestContests() {
-	$contestController = new ContestContests_ContestController();
+	$contestController = new ContestContests_Controller_Contest();
 	
 	if ($_GET["action"] == "new") {
 		$contestController->newAction();
@@ -48,7 +48,7 @@ function culturalContestContests() {
 }
 
 function culturalContestUsers() {
-	$userController = new ContestContests_UserController();
+	$userController = new ContestContests_Controller_User();
 	
 	if ($_GET["action"] == "show") {
 		$userController->showAction();

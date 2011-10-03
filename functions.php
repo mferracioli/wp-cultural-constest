@@ -59,8 +59,18 @@ function culturalContestForm($atts) {
 }
 
 function culturalContestStylesheet() {
-	$path = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "style.css";
+	$path = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "stylesheets/style.css";
 	wp_register_style("cultural_contest_stylesheet", $path);
 	wp_enqueue_style( "cultural_contest_stylesheet");
+}
+
+function culturalContestJavascript() {
+	$path = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "javascripts/jquery.validate.min.js";
+	$path2 = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "javascripts/application.js";
+	wp_register_script("jquery_validate", $path);
+	wp_register_script("cultural_contest_application", $path2);
+	wp_enqueue_script("jquery");
+	wp_enqueue_script("jquery_validate");
+	wp_enqueue_script("cultural_contest_application");
 }
 ?>

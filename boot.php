@@ -22,5 +22,5 @@ add_action("admin_menu", "culturalContestMenu");
 add_filter("admin_head","culturalContestEnableEditor");
 add_shortcode("cultural_contest_form", "culturalContestForm");
 add_filter("wp_print_styles","culturalContestStylesheet");
-
+add_filter("wp_print_scripts","culturalContestJavascript");
 ?>

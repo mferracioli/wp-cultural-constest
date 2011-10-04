@@ -41,3 +41,22 @@
 	color:#fff;
 	padding:6px 10px;
 }
+
+.cultural-contest-form-field .error {
+	border:1px solid red;
+}
+
+#cultural-contest-form-errors {
+	margin:15px 0 15px 0;
+}
+
+#cultural-contest-form-errors label.error {
+	color:red;
+	display:block;
+}
+
+.cultural-contest-confirmation {
+	font-size:14px;
+	font-weight:bold;
+	color:green;
+}

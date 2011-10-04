@@ -59,9 +59,14 @@ function culturalContestEnableEditor() {
 add_filter("admin_head","culturalContestEnableEditor");
 
 function culturalContestForm($atts) {
+	$userController = new ContestContests_Controller_User();
 	$id = $atts["id"];
-	$contestController = new ContestContests_Controller_Contest();
-	$contestController->showAction($id);
+	
+	if ($_POST["action"] == "create") {
+		$userController->createAction();
+	} else {
+		$userController->newAction($id);
+	}
 }
 
 add_shortcode("cultural_contest_form", "culturalContestForm");
@@ -76,11 +81,16 @@ add_filter("wp_print_styles","culturalContestStylesheet");
 
 function culturalContestJavascript() {
 	$path = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "javascripts/jquery.validate.min.js";
-	$path2 = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "javascripts/application.js";
+	$path2 = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "javascripts/jquery.maskedinput.min.js";
+	$path3 = WP_PLUGIN_URL . "/" . str_replace(basename( __FILE__), "", plugin_basename(__FILE__)) . "javascripts/application.js";
+	
 	wp_register_script("jquery_validate", $path);
-	wp_register_script("cultural_contest_application", $path2);
+	wp_register_script("jquery_maskedinput", $path2);
+	wp_register_script("cultural_contest_application", $path3);
+	
 	wp_enqueue_script("jquery");
 	wp_enqueue_script("jquery_validate");
+	wp_enqueue_script("jquery_maskedinput");
 	wp_enqueue_script("cultural_contest_application");
 }
 

@@ -40,7 +40,7 @@ class CulturalContest_Install {
 			address4 VARCHAR(255) NULL,
 			zipcode VARCHAR(255) NULL,
 			city VARCHAR(255) NULL,
-			state VARCHAR(2) NULL,
+			state VARCHAR(255) NULL,
 			document VARCHAR(255) NULL,
 			birthday DATETIME NULL,
 			answer text NULL,

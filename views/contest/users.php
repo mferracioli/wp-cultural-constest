@@ -4,6 +4,7 @@
 	<div class="icon32" id="icon-edit-pages"><br/></div>
 	<h2>
 		Usuários Cadastrados para "<?php echo $contest->name; ?>"
+		<a class="button add-new-h2" href="?page=cultural-contest&action=users&view=list&id=<?php echo $contest->id; ?>">Gerar Lista</a>
 		<a class="button add-new-h2" href="?page=cultural-contest&action=index">Voltar</a>
 	</h2>
 	<!-- /title -->

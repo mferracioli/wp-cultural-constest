@@ -39,8 +39,13 @@ class ContestContests_Controller_Contest {
 		$id = $_GET["id"];
 		$contest = $contestModel->find($id);
 		$items = $contestModel->getContestUsers($id);
-		require(dirname(__FILE__) . "/../views/contest/users.php");
-	}
+		
+		if ($_GET["view"] == "list") {
+			require(dirname(__FILE__) . "/../views/contest/users_list.php");
+		} else {
+			require(dirname(__FILE__) . "/../views/contest/users.php");
+		}
+ 	}
 	
 	function deleteAction() {
 		$contestModel = new ContestContests_Model_Contest();

@@ -4,6 +4,7 @@
 	<div class="icon32" id="icon-edit-pages"><br/></div>
 	<h2>
 		Todos Usuários Cadastrados
+		<a class="button add-new-h2" href="?page=cultural-contest-users&view=list">Gerar Lista</a>
 	</h2>
 	<!-- /title -->
 	

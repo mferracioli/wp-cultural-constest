@@ -13,7 +13,12 @@ class ContestContests_Controller_User {
 	function indexAction() {
 		$userModel = new ContestContests_Model_User();
 		$items = $userModel->findAll();
-		require(dirname(__FILE__) . "/../views/user/index.php");
+		
+		if ($_GET["view"] == "list") {
+			require(dirname(__FILE__) . "/../views/user/index_list.php");
+		} else {
+			require(dirname(__FILE__) . "/../views/user/index.php");
+		}
 	}
 	
 	function newAction($id) {

@@ -26,6 +26,7 @@
 				<tr>
 					<th style="" class="manage-column column-cb check-column" scope="col">&nbsp;</th>
 					<th style="" class="manage-column column-title" scope="col">Título</th>
+					<th style="" class="manage-column column-title" scope="col">Código</th>
 					<th style="" class="manage-column column-comments num" scope="col"><div class="vers"><img src="<?php echo bloginfo('url'); ?>/wp-admin/images/comment-grey-bubble.png" alt="Respostas"></div></th>
 					<th style="" class="manage-column column-date" scope="col">Data</th>
 				</tr>
@@ -35,6 +36,7 @@
 				<tr>
 					<th style="" class="manage-column column-cb check-column" scope="col">&nbsp;</th>
 					<th style="" class="manage-column column-title" scope="col">Título</th>
+					<th style="" class="manage-column column-title" scope="col">Código</th>
 					<th style="" class="manage-column column-comments num" scope="col"><div class="vers"><img src="<?php echo bloginfo('url'); ?>/wp-admin/images/comment-grey-bubble.png" alt="Comments"></div></th>
 					<th style="" class="manage-column column-date" scope="col">Data</th>
 				</tr>
@@ -51,6 +53,9 @@
 							<span class="edit"><a title="Editar essa página" href="?page=cultural-contest&action=edit&id=<?php echo $item->id; ?>">Editar</a> | </span>
 							<span class="trash"><a href="?page=cultural-contest&action=delete&id=<?php echo $item->id; ?>" title="Excluir" class="submitdelete" onclick="if(!confirm('Deseja excluir este concurso e seus usuários?')) return false;">Excluir</a></span>
 						</div>
+					</td>
+					<td class="post-title page-title column-title">
+						<span style="background:#aaa; color:#fff; font-weight:bold;">[cultural_contest_form id="<?php echo $item->id; ?>"]</span>
 					</td>
 					<td class="comments column-comments">
 						<div class="post-com-count-wrapper">

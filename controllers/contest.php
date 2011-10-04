@@ -17,6 +17,7 @@ class ContestContests_Controller_Contest {
 		$item = $contestModel->getLast();
 		$flashMessage = "Concurso criado com sucesso";
 		require(dirname(__FILE__) . "/../views/contest/edit.php");
+//		header("Location: " . get_bloginfo('url') . "/wp-admin/admin.php?page=cultural-contest");
 	}
 	
 	function editAction() {

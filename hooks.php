@@ -1,10 +1,13 @@
 <?php
 function culturalContestInstall() {
+	
+	var_dump("install");
+	
 	$culturalContestInstall = new CulturalContest_Install();
 	$culturalContestInstall->install();
 }
 
-register_activation_hook(__FILE__, "culturalContestInstall");
+register_activation_hook(dirname(__FILE__) . "/boot.php", "culturalContestInstall");
 
 function culturalContestMenu() {
 	add_menu_page("Concursos", "Concursos", "manage_options", "cultural-contest", "culturalContestContests");

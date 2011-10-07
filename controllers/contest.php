@@ -12,7 +12,7 @@ class ContestContests_Controller_Contest {
 	}
 	
 	function createAction() {
-		$contestModel = new ContestContests_Model_Contest();
+		$contestModel = new ContestContests_Model_Contest();		
 		$contestModel->create($_POST);
 		$item = $contestModel->getLast();
 		$flashMessage = "Concurso criado com sucesso";

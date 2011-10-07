@@ -17,6 +17,6 @@ jQuery(document).ready(function($){
 	try { $("#contest-birthday").rules("add", { required: true, messages: { required: "Campo 'Data de Nascimento' precisa ser preenchido." } }); } catch(e) {}
 	try { $("#contest-answer").rules("add", { required: true, messages: { required: "Campo 'Resposta' precisa ser preenchido." } }); } catch(e) {}
 	
-	$("#contest-birthday").mask("99/99/9999");
+	try { $("#contest-birthday").mask("99/99/9999"); } catch(e) {}
 	
 });

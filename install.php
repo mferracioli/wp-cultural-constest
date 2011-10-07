@@ -22,6 +22,18 @@ class CulturalContest_Install {
 			id BIGINT NOT NULL AUTO_INCREMENT,
 			name VARCHAR(255) NULL,
 			description text NULL,
+			show_name tinyint(1) NULL,
+			show_email tinyint(1) NULL,
+			show_address1 tinyint(1) NULL,
+			show_address2 tinyint(1) NULL,
+			show_address3 tinyint(1) NULL,
+			show_address4 tinyint(1) NULL,
+			show_zipcode tinyint(1) NULL,
+			show_city tinyint(1) NULL,
+			show_state tinyint(1) NULL,
+			show_document tinyint(1) NULL,
+			show_birthday tinyint(1) NULL,
+			show_answer tinyint(1) NULL,
 			created_at DATETIME NULL,
 			UNIQUE KEY id (id)
 		);";
